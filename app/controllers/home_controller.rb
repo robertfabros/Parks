@@ -6,9 +6,11 @@ class HomeController < ApplicationController
   end
 
   def search
-    @query = params[:q]
-    @results = Park.where("name LIKE ?", "%#{@query}%") +
-               UrbanTree.where("common_name LIKE ?", "%#{@query}%") +
-               SchoolZoneSignage.where("sign_location LIKE ?", "%#{@query}%")
+    query = params[:q]
+    @parks = Park.where("name LIKE ?", "%#{query}%")
+    @school_zones = SchoolZoneSignage.joins(:school).where("schools.name LIKE ?", "%#{query}%")
+    @urban_trees = UrbanTree.where("common_name LIKE ?", "%#{query}%")
+
+    render :search
   end
 end

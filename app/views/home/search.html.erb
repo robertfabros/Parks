@@ -8,28 +8,82 @@
   <%= csp_meta_tag %>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><%= link_to 'Home', root_path %></li>
-      <li><%= link_to 'About', about_path %></li>
-      <li><%= link_to 'School Zone Signages', admin_school_zone_signages_path %></li>
-      <li><%= link_to 'Urban Trees', admin_urban_trees_path %></li>
-      <li><%= link_to "Winnipeg's Parks and Open Space", admin_parks_path %></li>
-      <a href="<%= admin_root_path %>">Admin</a>
-    </ul>
-  </nav>
-
+ 
   <div class="center">
-    <h1>Search Results for '<%= @query %>'</h1>
-    <% if @results.any? %>
-      <ul>
-        <% @results.each do |result| %>
-          <li><%= result.name || result.common_name || result.sign_location %></li>
-        <% end %>
-      </ul>
-    <% else %>
-      <p>No results found</p>
-    <% end %>
+    <h1>Search Results</h1>
+
+<% if @parks.present? %>
+  <h2>Parks</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Neighbourhood</th>
+        <th>District</th>
+        <th>CCA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @parks.each do |park| %>
+        <tr>
+          <td><%= link_to park.name, park_path(park) %></td>
+          <td><%= park.location %></td>
+          <td><%= park.neighbourhood %></td>
+          <td><%= park.district %></td>
+          <td><%= park.cca %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<% if @school_zones.present? %>
+  <h2>School Zones</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>School Name</th>
+        <th>Zone Name</th>
+        <th>Sign Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @school_zones.each do |signage| %>
+        <tr>
+          <td><%= link_to signage.school.name, school_zone_path(signage.school_zone) %></td>
+          <td><%= signage.school_zone.zone_name %></td>
+          <td><%= signage.sign_type %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<% if @urban_trees.present? %>
+  <h2>Urban Trees</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Common Name</th>
+        <th>Electoral Ward</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @urban_trees.each do |tree| %>
+        <tr>
+          <td><%= link_to tree.common_name, urban_tree_path(tree) %></td>
+          <td><%= tree.electoral_ward %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<% if @parks.empty? && @school_zones.empty? && @urban_trees.empty? %>
+  <p>No results found for '<%= params[:q] %>'</p>
+<% end %>
+
   </div>
 
   <style>
