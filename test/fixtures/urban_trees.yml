@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tree_identifier_id: 1
+  botanical_name_id: 1
+  common_name_id: 1
+  electoral_ward_id: 1
+  location_class_id: 1
+
+two:
+  tree_identifier_id: 1
+  botanical_name_id: 1
+  common_name_id: 1
+  electoral_ward_id: 1
+  location_class_id: 1

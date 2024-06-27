@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tree_specy: one
+  tree_health: one
+  tree_location: one
+  park: one
+  common_name: MyString
+  scientific_name: MyString
+  diameter: MyString
+  condition: MyString
+  latitude: 1.5
+  longitude: 1.5
+
+two:
+  tree_specy: two
+  tree_health: two
+  tree_location: two
+  park: two
+  common_name: MyString
+  scientific_name: MyString
+  diameter: MyString
+  condition: MyString
+  latitude: 1.5
+  longitude: 1.5
