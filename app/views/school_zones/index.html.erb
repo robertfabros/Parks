@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>School Zone Signages</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+</head>
+
+<body>
+  
+
+  <h1>School Zone Signages</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>School Name</th>
+        <th>Zone Name</th>
+        <th>Sign Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @school_zone_signages.each do |signage| %>
+        <tr>
+          <td><%= signage.school.name %></td>
+          <td><%= signage.school_zone.zone_name %></td>
+          <td><%= signage.sign_type %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+</body>
+</html>

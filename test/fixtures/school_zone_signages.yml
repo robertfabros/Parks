@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  school: one
+  school_zone: one
+  sign_type: MyString
+  sign_location: MyString
+
+two:
+  school: two
+  school_zone: two
+  sign_type: MyString
+  sign_location: MyString

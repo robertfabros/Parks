@@ -1,3 +1,4 @@
+# app/models/urban_tree.rb
 class UrbanTree < ApplicationRecord
   validates :common_name, :electoral_ward, presence: true
 

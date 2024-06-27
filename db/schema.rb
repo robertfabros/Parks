@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_27_135014) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_27_202718) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -120,6 +120,29 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_27_135014) do
     t.index ["neighbourhood_id"], name: "index_parks_on_neighbourhood_id"
   end
 
+  create_table "school_zone_signages", force: :cascade do |t|
+    t.integer "school_id", null: false
+    t.integer "school_zone_id", null: false
+    t.string "sign_type"
+    t.string "sign_location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["school_id"], name: "index_school_zone_signages_on_school_id"
+    t.index ["school_zone_id"], name: "index_school_zone_signages_on_school_zone_id"
+  end
+
+  create_table "school_zones", force: :cascade do |t|
+    t.string "zone_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tree_healths", force: :cascade do |t|
     t.string "status"
     t.date "last_inspected"
@@ -180,6 +203,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_27_135014) do
   add_foreign_key "parks", "districts"
   add_foreign_key "parks", "locations"
   add_foreign_key "parks", "neighbourhoods"
+  add_foreign_key "school_zone_signages", "school_zones"
+  add_foreign_key "school_zone_signages", "schools"
   add_foreign_key "tree_inventories", "parks"
   add_foreign_key "tree_inventories", "tree_healths"
   add_foreign_key "tree_inventories", "tree_locations"

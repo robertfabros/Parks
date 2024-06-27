@@ -1,11 +1,11 @@
+<!-- app/views/urban_trees/index.html.erb -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Winnipeg Data</title>
+  <title>Urban Trees</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
 </head>
 
 <body>
@@ -22,7 +22,25 @@
     </nav>
   </header>
 
-  <%= yield %>
+  <h1>Urban Trees</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Common Name</th>
+        <th>Electoral Ward</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @urban_trees.each do |tree| %>
+        <tr>
+          <td><%= tree.id %></td>
+          <td><%= tree.common_name %></td>
+          <td><%= tree.electoral_ward %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
   <footer>
     <h2>Search for Parks, Trees, and School Zone Signages</h2>
