@@ -6,30 +6,34 @@
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
 </head>
-
 <body>
   
 
-  <h1>School Zone Signages</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>School Name</th>
-        <th>Zone Name</th>
-        <th>Sign Type</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @school_zone_signages.each do |signage| %>
+  <div class="container">
+    <h1>School Zone Signages</h1>
+    <table>
+      <thead>
         <tr>
-          <td><%= signage.school.name %></td>
-          <td><%= signage.school_zone.zone_name %></td>
-          <td><%= signage.sign_type %></td>
+          <th>School Name</th>
+          <th>Zone Name</th>
+          <th>Sign Type</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-
+      </thead>
+      <tbody>
+        <% @school_zone_signages.each do |signage| %>
+          <tr>
+            <td><%= link_to signage.school.name, school_zone_path(signage.school_zone) %></td>
+            <td><%= signage.school_zone.zone_name %></td>
+            <td><%= signage.sign_type %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+ <div class="pagination">
+      <%= paginate @school_zone_signages %>
+    </div>
+   <br clear="all">
+  
 </body>
 </html>

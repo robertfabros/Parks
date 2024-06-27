@@ -24,7 +24,7 @@
     <tbody>
       <% @parks.each do |park| %>
         <tr>
-          <td><%= park.name %></td>
+          <td><%= link_to park.name, park_path(park) %></td>
           <td><%= park.location.description %></td>
           <td><%= park.neighbourhood.name %></td>
           <td><%= park.district.name %></td>
@@ -33,7 +33,9 @@
       <% end %>
     </tbody>
   </table>
-
-  
+  <div class="pagination">
+<%= paginate @parks %>
+   </div>
+   <br clear="all">
 </body>
 </html>

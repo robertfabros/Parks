@@ -1,4 +1,8 @@
-<!-- app/views/school_zones/show.html.erb -->
-<h1>School Zone: <%= @school_zone.sign_location %></h1>
-<p>Sign Location: <%= @school_zone.sign_location %></p>
-<p>Sign Message: <%= @school_zone.sign_message %></p>
+<h1>School Zone Signage</h1>
+<div align="center" class="member-container">
+<p><strong>School Name:</strong> <%= @school_zone_signage.school.name %></p>
+<p><strong>Zone Name:</strong> <%= @school_zone_signage.school_zone.zone_name %></p>
+<p><strong>Sign Type:</strong> <%= @school_zone_signage.sign_type %></p>
+
+<%= link_to 'Back', request.referer, class: 'btn btn-primary' %>
+</div>

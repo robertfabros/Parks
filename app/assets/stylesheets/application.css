@@ -13,3 +13,157 @@
  *= require_tree .
  *= require_self
  */
+/* application.css or another CSS file */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e2a38;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  header {
+    background-color: #243b55;
+    padding: 1rem;
+  }
+  
+  header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  header nav ul li {
+    margin: 0 1rem;
+    font-size: 12pt;
+  }
+  
+  header nav ul li a {
+    color: #ffffff!important;
+    text-decoration: none!important;
+  }
+  
+  header nav ul li a:hover {
+    text-decoration: underline!important;
+  }
+  
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Adjusted to move the search bar to the middle */
+  }
+  
+  .search-container {
+    text-align: center;
+  }
+  
+  .search-container h2 {
+    color: #ff7b7b;
+    margin-bottom: 1rem;
+  }
+  
+  .search-container input[type="text"] {
+    width: 80%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 12pt;
+  }
+  
+  .search-container input[type="submit"] {
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: #3b5998;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .search-container input[type="submit"]:hover {
+    background-color: #29487d;
+  }
+  
+  footer {
+    padding: 1rem;
+    background-color: #243b55;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  h1 {
+    text-align: center;
+    color: #e0e1dd;
+    margin-bottom: 1rem;
+    padding: 10px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    font-size: 11pt;
+  }
+  
+  table thead th {
+    background-color: #0f3460;
+    color: #e0e1dd;
+    text-align: left;
+    padding: 0.5rem;
+  }
+  
+  table tbody tr:nth-child(even) {
+    background-color: #1a1a2e;
+  }
+  
+
+  table tbody tr:nth-child(odd) {
+    background-color: #16213e;
+  }
+
+  table tbody td {
+    padding: 0.7rem;
+    color: #e0e1dd;
+  }
+
+  td {
+    padding: 12px!important;
+  }
+  .pagination {
+    margin: 20px auto;
+
+  }
+  
+  .pagination .page {
+    margin: 0 5px;
+  }
+  
+  .pagination .page a {
+    color: #000000;
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #0f3460;
+    border-radius: 5px;
+  }
+  
+  .pagination .page a:hover {
+    background-color: #1a1a2e;
+  }
+  
+  .pagination .page.current {
+    padding: 5px 10px;
+    background-color: #1a1a2e;
+    border-radius: 5px;
+    color: #e0e1dd;
+  }
+  .member-container {
+    font-size: 12pt;
+    margin: 30px 0px;
+  }

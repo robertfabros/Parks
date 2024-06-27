@@ -1,0 +1,7 @@
+<h1>Urban Tree <%= @urban_tree.id %></h1>
+<div align="center" class="member-container">
+<p><strong>Common Name:</strong> <%= @urban_tree.common_name %></p>
+<p><strong>Electoral Ward:</strong> <%= @urban_tree.electoral_ward %></p>
+
+<%= link_to 'Back', request.referer, class: 'btn btn-primary' %>
+</div>

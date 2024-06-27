@@ -1,47 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>About - Music App</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: #f9f9f9;
-    }
-    .header {
-      background-color: #333;
-      padding: 10px 0;
-      color: #fff;
-    }
-    .header a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-    }
-    .content {
-      padding: 20px;
-    }
-  </style>
+  <title>Home</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
 </head>
-<body>
-  <div class="header">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/admin/school_zone_signages">School Zone Signages</a>
-    <a href="/admin/urban_trees">Urban Trees</a>
-    <a href="/admin/parks">Winnipeg's Parks and Open Space</a>
-    <a href="<%= admin_root_path %>">Admin</a>
-  </div>
 
-  <div class="content">
-    <h1>About the Music App</h1>
-    <p>This application provides detailed information on Parks, Trees, and School Zone Signages in Winnipeg.</p>
-    <p>Data Sources:</p>
-    <ul>
-      <li>Urban Trees: Data about trees in urban areas.</li>
-      <li>Parks: Information about parks in Winnipeg.</li>
-      <li>School Zone Signages: Details about school zones and signage.</li>
-    </ul>
+<body>
+  <div class="container">
+    
+
+    <main>
+      <div class="search-container">
+        <h2>Search for Parks, Trees, and School Zone Signages</h2>
+        <%= form_with url: search_path, method: :get, local: true do %>
+          <%= text_field_tag :q, params[:q], placeholder: "Search..." %>
+          <%= submit_tag "Search" %>
+        <% end %>
+      </div>
+    </main>
+
+   
   </div>
 </body>
 </html>

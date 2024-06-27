@@ -1,7 +1,14 @@
 <!-- app/views/parks/show.html.erb -->
 <h1><%= @park.name %></h1>
-<p><%= @park.description %></p>
-<p>Location: <%= @park.location %></p>
-<p>Neighbourhood: <%= @park.neighbourhood %></p>
-<p>District: <%= @park.district %></p>
+
+<div align="center" class="member-container">
+<p>Location: <%= @park.location.description %></p>
+<p>Neighbourhood: <%= @park.neighbourhood.name %></p>
+<p>District: <%= @park.district.name %></p>
 <p>CCA: <%= @park.cca %></p>
+
+<%= link_to 'Back', request.referer, class: 'btn btn-primary' %>
+</div>
+
+
+
