@@ -15,9 +15,11 @@
       <div class="search-container">
         <h2>Search for Parks, Trees, and School Zone Signages</h2>
         <%= form_with url: search_path, method: :get, local: true do %>
-          <%= text_field_tag :q, params[:q], placeholder: "Search..." %>
-          <%= submit_tag "Search" %>
-        <% end %>
+  <%= text_field_tag :q, params[:q], placeholder: "Search..." %>
+  <%= select_tag :category, options_for_select([['All', ''], ['Parks', 'parks'], ['School Zones', 'school_zones'], ['Urban Trees', 'urban_trees']], params[:category]), prompt: 'Select Category' %>
+  <%= submit_tag "Search" %>
+<% end %>
+
       </div>
     </main>
 
