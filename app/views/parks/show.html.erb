@@ -2,12 +2,11 @@
 <h1><%= @park.name %></h1>
 
 <div align="center" class="member-container">
-<p>Location: <%= @park.location.description %></p>
-<p>Neighbourhood: <%= @park.neighbourhood.name %></p>
-<p>District: <%= @park.district.name %></p>
-<p>CCA: <%= @park.cca %></p>
+<p><strong>Location:</strong> <%= @park.location.description %></p>
+<p><strong>Neighbourhood:</strong> <%= link_to @park.neighbourhood.name, neighbourhood_path(@park.neighbourhood) %></p>
+<p><strong>District:</strong> <%= link_to @park.district.name, district_path(@park.district) %></p>
 
-<%= link_to 'Back', request.referer, class: 'btn btn-primary' %>
+<%= link_to 'Back to Parks', parks_path %>
 </div>
 
 

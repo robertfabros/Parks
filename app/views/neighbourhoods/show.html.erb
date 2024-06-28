@@ -1,0 +1,10 @@
+<h1><%= @neighbourhood.name %></h1>
+
+<p><strong>Parks in this Neighbourhood:</strong></p>
+<ul>
+<% @neighbourhood.parks.each do |park| %>
+  <li><%= link_to park.name, park_path(park) %></li>
+<% end %>
+</ul>
+
+<%= link_to 'Back to Neighbourhoods', neighbourhoods_path %>
