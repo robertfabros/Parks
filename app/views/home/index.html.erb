@@ -11,17 +11,23 @@
   <div class="container">
     
 
-    <main>
-      <div class="search-container">
-        <h2>Search for Parks, Trees, and School Zone Signages</h2>
-        <%= form_with url: search_path, method: :get, local: true do %>
-  <%= text_field_tag :q, params[:q], placeholder: "Search..." %>
-  <%= select_tag :category, options_for_select([['All', ''], ['Parks', 'parks'], ['School Zones', 'school_zones'], ['Urban Trees', 'urban_trees']], params[:category]), prompt: 'Select Category' %>
-  <%= submit_tag "Search" %>
-<% end %>
-
+<main class="bg-blue-900 min-h-screen flex items-center justify-center">
+  <div class="bg-blue-800 p-6 rounded-lg shadow-lg w-full max-w-md">
+    <h2 class="text-white text-2xl font-bold mb-4 text-center">Search for Parks, Trees, and School Zone Signages</h2>
+    <%= form_with url: search_path, method: :get, local: true, class: "space-y-4" do %>
+      <div>
+        <%= text_field_tag :q, params[:q], placeholder: "Search...", class: "w-full p-2 rounded-md border border-gray-300 focus:ring focus:ring-blue-500" %>
       </div>
-    </main>
+      <div>
+        <%= select_tag :category, options_for_select([['All', ''], ['Parks', 'parks'], ['School Zones', 'school_zones'], ['Urban Trees', 'urban_trees']], params[:category]), prompt: 'Select Category', class: "w-full p-2 rounded-md border border-gray-300 focus:ring focus:ring-blue-500" %>
+      </div>
+      <div class="text-center">
+        <%= submit_tag "Search", class: "bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700" %>
+      </div>
+    <% end %>
+  </div>
+</main>
+
 
    
   </div>
