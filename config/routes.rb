@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :about, only: [:index]
   resources :parks, only: [:index, :show]
   resources :urban_trees, only: [:index, :show]
-  resources :school_zones
+  resources :school_zones, only: [:index, :show]
   resources :districts, only: [:index, :show]
   resources :neighbourhoods, only: [:index, :show]
 

@@ -1,8 +1,16 @@
 <div class="container mx-auto my-8 px-4">
 <h1 class="text-center text-2xl py-2 mb-4">Urban Tree <%= @urban_tree.id %></h1>
-<div align="center" class="member-container">
+<div class="text-center member-container">
 <p><strong>Common Name:</strong> <%= @urban_tree.common_name %></p>
 <p><strong>Electoral Ward:</strong> <%= @urban_tree.electoral_ward %></p>
+
+<% if @urban_tree.image.attached? %>
+  <p><%= image_tag url_for(@urban_tree.image), height: '200', class: "mx-auto mb-4", alt: @urban_tree.common_name %>
+</p>
+<% else %>
+  <p>No image available</p>
+<% end %>
+
 
 <%= link_to 'Back', request.referer, class: 'btn btn-primary' %>
 </div>
