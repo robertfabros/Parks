@@ -1,28 +1,5 @@
 <h1>New School Zone Signage</h1>
-<%= form_with(model: @school_zone_signage, local: true, multipart: true) do |form| %>
-  <div class="field">
-    <%= form.label :school_name %>
-    <%= form.text_field :school_name %>
-  </div>
 
-  <div class="field">
-    <%= form.label :zone_name %>
-    <%= form.text_field :zone_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :sign_type %>
-    <%= form.text_field :sign_type %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<%= render 'form', school_zone_signage: @school_zone_signage %>
 
 <%= link_to 'Back', school_zones_path %>
