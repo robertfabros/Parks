@@ -71,6 +71,3 @@ gem "devise", "~> 4.9"
 gem 'sassc-rails', '>= 2.1.0'
 gem 'autoprefixer-rails'
 gem 'kaminari'
-
-gem 'tailwindcss-rails'
-gem 'webpacker', '~> 5.0'
