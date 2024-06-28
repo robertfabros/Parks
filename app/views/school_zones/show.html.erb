@@ -1,8 +1,10 @@
-<h1>School Zone Signage</h1>
+<div class="container mx-auto my-8 px-4">
+<h1 class="text-center text-2xl py-2 mb-4">School Zone Signage</h1>
 <div align="center" class="member-container">
 <p><strong>School Name:</strong> <%= @school_zone_signage.school.name %></p>
 <p><strong>Zone Name:</strong> <%= @school_zone_signage.school_zone.zone_name %></p>
 <p><strong>Sign Type:</strong> <%= @school_zone_signage.sign_type %></p>
 
 <%= link_to 'Back', request.referer, class: 'btn btn-primary' %>
+</div>
 </div>

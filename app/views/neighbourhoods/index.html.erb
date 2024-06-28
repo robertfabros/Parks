@@ -1,4 +1,4 @@
-<h1>Neighbourhoods</h1>
+<h1 class="text-center text-2xl py-2 mb-4">Neighbourhoods</h1>
 <ul>
   <% @neighbourhoods.each do |neighbourhood| %>
     <li><%= link_to neighbourhood.name, neighbourhood_path(neighbourhood) %></li>

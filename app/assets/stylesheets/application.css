@@ -20,4 +20,79 @@
  */
 /* application.css or another CSS file */
 
+a {
+  text-decoration: underline;;
+}
+a:hover {
+  text-decoration: none;
+}
+nav ul a {
+  text-decoration: none;
+}
 
+h2, h3 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+p {
+  padding: 3px 0px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  font-size: 11pt;
+}
+
+table thead th {
+  background-color: #0f3460;
+  color: #e0e1dd;
+  text-align: left;
+  padding: 0.5rem;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #1a1a2e;
+}
+
+
+table tbody tr:nth-child(odd) {
+  background-color: #16213e;
+}
+
+table tbody td {
+  padding: 0.7rem;
+  color: #e0e1dd;
+}
+
+td {
+  padding: 12px!important;
+}
+.pagination {
+  margin: 20px auto;
+
+}
+
+.pagination .page {
+  margin: 0 5px;
+}
+
+.pagination .page a {
+  color: #000000;
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: #0f3460;
+  border-radius: 5px;
+}
+
+.pagination .page a:hover {
+  background-color: #1a1a2e;
+}
+
+.pagination .page.current {
+  padding: 5px 10px;
+  background-color: #1a1a2e;
+  border-radius: 5px;
+  color: #e0e1dd;
+}
