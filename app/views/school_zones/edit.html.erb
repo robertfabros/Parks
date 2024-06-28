@@ -1,16 +1,5 @@
-<%= form_with(model: @school_zone, local: true) do |form| %>
-  <% if @school_zone.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@school_zone.errors.count, "error") %> prohibited this school zone from being saved:</h2>
-
-      <ul>
-        <% @school_zone.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<h1>Edit School Zone Signage</h1>
+<%= form_with(model: @school_zone_signage, local: true, multipart: true) do |form| %>
   <div class="field">
     <%= form.label :school_name %>
     <%= form.text_field :school_name %>
@@ -35,3 +24,5 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<%= link_to 'Back', school_zones_path %>
