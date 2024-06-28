@@ -60,7 +60,10 @@
   <p>No results found for '<%= params[:q] %>' in '<%= params[:category] %>'</p>
 <% end %>
 
-
+<div class="text-center mt-6">
+    <%= link_to 'Back to Homepage', root_path, class: 'text-blue-500 hover:text-blue-700' %>
+  </div>
+  <br />
   </div>
 
   <style>
