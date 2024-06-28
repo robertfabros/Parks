@@ -7,71 +7,79 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
 </head>
 
-<body >
+<body class="bg-blue-900 text-white font-sans">
   
-<div class="member-container">
+  <div class="container mx-auto my-8 px-4">
 
-  <h1>About the Winnipeg Data Site</h1>
-  <p>This application provides detailed information on Parks, Trees, and School Zone Signages in Winnipeg. The data is sourced from various APIs to offer comprehensive insights into the city's public spaces and infrastructure.</p>
+    <h1 class="text-center text-2xl py-2 mb-4">About the Winnipeg Data Site</h1>
 
-  <h2>Data Sources</h2>
-  
-  <h3>1. Winnipeg Tree Inventory</h3>
-  <p>
-    <strong>Source:</strong> <a href="https://data.winnipeg.ca/resource/hfwk-jp4h.json">Winnipeg Tree Inventory API</a><br>
-    <strong>Description:</strong> This dataset provides detailed information about trees within the city. It includes attributes such as tree identifier, common name, botanical name, electoral ward, and location class. This information helps in managing urban forestry, tracking tree species distribution, and monitoring tree health and location.<br>
-    <strong>Data Structure:</strong><br>
-    <ul>
-      <li><strong>Tree ID:</strong> A unique identifier for each tree.</li>
-      <li><strong>Common Name:</strong> The common name of the tree species.</li>
-      <li><strong>Botanical Name:</strong> The scientific name of the tree species.</li>
-      <li><strong>Electoral Ward:</strong> The electoral ward where the tree is located.</li>
-      <li><strong>Location Class:</strong> A classification of the tree's location.</li>
-    </ul>
-    <strong>Database Tables and Columns:</strong><br>
-    <ul>
-      <li><strong>UrbanTrees:</strong> id (Primary Key), common_name_id (Foreign Key), electoral_ward_id (Foreign Key)</li>
-      <li><strong>CommonNames:</strong> id (Primary Key), name (string)</li>
-      <li><strong>ElectoralWards:</strong> id (Primary Key), name (string)</li>
-    </ul>
-  </p>
 
-  <h3>2. Winnipeg Parks API</h3>
-  <p>
-    <strong>Source:</strong> <a href="https://data.winnipeg.ca/resource/tx3d-pfxq.json">Winnipeg Parks API</a><br>
-    <strong>Description:</strong> This dataset provides comprehensive information about parks in Winnipeg. The data includes details such as park name, location description, neighborhood, district, and Community Centre Area (CCA). Each record represents a single park.<br>
-    <strong>Data Structure:</strong><br>
-    <ul>
-      <li><strong>Park Name:</strong> The name of the park.</li>
-      <li><strong>Location Description:</strong> Description of the park's location.</li>
-      <li><strong>Neighborhood:</strong> The neighborhood where the park is located.</li>
-      <li><strong>District:</strong> The district that the park belongs to.</li>
-      <li><strong>CCA:</strong> The Community Centre Area associated with the park.</li>
-    </ul>
-    <strong>Database Tables and Columns:</strong><br>
-    <ul>
-      <li><strong>Parks:</strong> id (Primary Key), park_name, location_id, neighborhood_id, district_id, cca</li>
-      <li><strong>Locations:</strong> id (Primary Key), description</li>
-      <li><strong>Neighborhoods:</strong> id (Primary Key), name</li>
-      <li><strong>Districts:</strong> id (Primary Key), name</li>
-    </ul>
-  </p>
+    <p class="text-center mb-8">This application provides detailed information on Parks, Trees, and School Zone Signages in Winnipeg. The data is sourced from various APIs to offer comprehensive insights into the city's public spaces and infrastructure.</p>
 
-  <h3>3. School Zone Signages</h3>
-  <p>
-    <strong>Source:</strong> [School Zone Signages API](https://data.winnipeg.ca/resource/school_zones.json)<br>
-    <strong>Description:</strong> This dataset provides information about school zone signages in Winnipeg. It includes attributes such as school name, zone name, and sign type. This information is crucial for managing and monitoring school zones.<br>
-    <strong>Data Structure:</strong><br>
-    <ul>
-      <li><strong>School Name:</strong> The name of the school.</li>
-      <li><strong>Zone Name:</strong> The name of the school zone.</li>
-      <li><strong>Sign Type:</strong> The type of signage in the school zone.</li>
-    </ul>
-    <strong>Database Tables and Columns:</strong><br>
-    <ul>
-      <li><strong>SchoolZones:</strong> id (Primary Key), school_name, zone_name, sign_type</li>
-    </ul>
-  </p>
+    <h2 class="text-2xl mb-4">Data Sources</h2>
+    
+    <div class="bg-blue-800 p-6 rounded-lg mb-8">
+      <h3 class="text-xl mb-2">1. Winnipeg Tree Inventory</h3>
+      <p>
+        <strong>Source:</strong> <a href="https://data.winnipeg.ca/resource/hfwk-jp4h.json" class="underline hover:text-blue-300">Winnipeg Tree Inventory API</a><br>
+        <strong>Description:</strong> This dataset provides detailed information about trees within the city. It includes attributes such as tree identifier, common name, botanical name, electoral ward, and location class. This information helps in managing urban forestry, tracking tree species distribution, and monitoring tree health and location.<br>
+        <strong>Data Structure:</strong><br>
+        <ul class="list-disc list-inside ml-4">
+          <li><strong>Tree ID:</strong> A unique identifier for each tree.</li>
+          <li><strong>Common Name:</strong> The common name of the tree species.</li>
+          <li><strong>Botanical Name:</strong> The scientific name of the tree species.</li>
+          <li><strong>Electoral Ward:</strong> The electoral ward where the tree is located.</li>
+          <li><strong>Location Class:</strong> A classification of the tree's location.</li>
+        </ul>
+        <strong>Database Tables and Columns:</strong><br>
+        <ul class="list-disc list-inside ml-4">
+          <li><strong>UrbanTrees:</strong> id (Primary Key), common_name_id (Foreign Key), electoral_ward_id (Foreign Key)</li>
+          <li><strong>CommonNames:</strong> id (Primary Key), name (string)</li>
+          <li><strong>ElectoralWards:</strong> id (Primary Key), name (string)</li>
+        </ul>
+      </p>
+    </div>
+
+    <div class="bg-blue-800 p-6 rounded-lg mb-8">
+      <h3 class="text-xl mb-2">2. Winnipeg Parks API</h3>
+      <p>
+        <strong>Source:</strong> <a href="https://data.winnipeg.ca/resource/tx3d-pfxq.json" class="underline hover:text-blue-300">Winnipeg Parks API</a><br>
+        <strong>Description:</strong> This dataset provides comprehensive information about parks in Winnipeg. The data includes details such as park name, location description, neighborhood, district, and Community Centre Area (CCA). Each record represents a single park.<br>
+        <strong>Data Structure:</strong><br>
+        <ul class="list-disc list-inside ml-4">
+          <li><strong>Park Name:</strong> The name of the park.</li>
+          <li><strong>Location Description:</strong> Description of the park's location.</li>
+          <li><strong>Neighborhood:</strong> The neighborhood where the park is located.</li>
+          <li><strong>District:</strong> The district that the park belongs to.</li>
+          <li><strong>CCA:</strong> The Community Centre Area associated with the park.</li>
+        </ul>
+        <strong>Database Tables and Columns:</strong><br>
+        <ul class="list-disc list-inside ml-4">
+          <li><strong>Parks:</strong> id (Primary Key), park_name, location_id, neighborhood_id, district_id, cca</li>
+          <li><strong>Locations:</strong> id (Primary Key), description</li>
+          <li><strong>Neighborhoods:</strong> id (Primary Key), name</li>
+          <li><strong>Districts:</strong> id (Primary Key), name</li>
+        </ul>
+      </p>
+    </div>
+
+    <div class="bg-blue-800 p-6 rounded-lg mb-8">
+      <h3 class="text-xl mb-2">3. School Zone Signages</h3>
+      <p>
+        <strong>Source:</strong> <a href="https://data.winnipeg.ca/resource/school_zones.json" class="underline hover:text-blue-300">School Zone Signages API</a><br>
+        <strong>Description:</strong> This dataset provides information about school zone signages in Winnipeg. It includes attributes such as school name, zone name, and sign type. This information is crucial for managing and monitoring school zones.<br>
+        <strong>Data Structure:</strong><br>
+        <ul class="list-disc list-inside ml-4">
+          <li><strong>School Name:</strong> The name of the school.</li>
+          <li><strong>Zone Name:</strong> The name of the school zone.</li>
+          <li><strong>Sign Type:</strong> The type of signage in the school zone.</li>
+        </ul>
+        <strong>Database Tables and Columns:</strong><br>
+        <ul class="list-disc list-inside ml-4">
+          <li><strong>SchoolZones:</strong> id (Primary Key), school_name, zone_name, sign_type</li>
+        </ul>
+      </p>
+    </div>
   </div>
 </body>
 </html>

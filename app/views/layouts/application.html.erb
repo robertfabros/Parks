@@ -11,24 +11,26 @@
   <%= javascript_include_tag 'application' %>
 </head>
 
-<body>
-  
-  <header>
-    <nav>
-      <ul>
-        <li><%= link_to 'Home', root_path %></li>
-        <li><%= link_to 'About', about_path %></li>
-        <li><%= link_to 'School Zone Signages', school_zones_path %></li>
-        <li><%= link_to 'Urban Trees', urban_trees_path %></li>
-        <li><%= link_to "Winnipeg's Parks and Open Space", parks_path %></li>
-        <li><%= link_to 'Admin', admin_root_path %></li>
-      </ul>
-    </nav>
-  </header>
-<div class="container">
+<body class="bg-blue-900 text-white">
+<header class="bg-blue-800 py-2">
+  <nav>
+    <ul class="flex justify-center space-x-8">
+      <li class="px-4"><%= link_to 'Home', root_path, class: 'text-white underline hover:text-gray-200' %></li>
+      <li class="px-4"><%= link_to 'About', about_path, class: 'text-white underline hover:text-gray-200' %></li>
+      <li class="px-4"><%= link_to 'School Zone Signages', school_zones_path, class: 'text-white underline hover:text-gray-200' %></li>
+      <li class="px-4"><%= link_to 'Urban Trees', urban_trees_path, class: 'text-white underline hover:text-gray-200' %></li>
+      <li class="px-4"><%= link_to "Winnipeg's Parks and Open Space", parks_path, class: 'text-white underline hover:text-gray-200' %></li>
+      <li class="px-4"><%= link_to 'Admin', admin_root_path, class: 'text-white underline hover:text-gray-200' %></li>
+    </ul>
+  </nav>
+</header>
+
+
+
+<div class="container mx-auto my-8">
   <%= yield %>
 </div>
-  <footer>
+  <footer class="bg-blue-800 p-4 text-center">
    Winnipeg Data Project Website 2024.
   </footer>
   
