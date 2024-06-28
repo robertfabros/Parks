@@ -38,11 +38,17 @@ p {
   padding: 3px 0px;
 }
 
+.rb-table-container {
+  width: 85%;
+  margin: auto;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 2rem;
   font-size: 11pt;
+  margin: auto;
 }
 
 table thead th {

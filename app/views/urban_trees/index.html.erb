@@ -11,6 +11,7 @@
 
   <div class="container">
     <h1 class="text-center text-2xl py-2 mb-4">Urban Trees</h1>
+    <div class="rb-table-container">
     <table>
       <thead>
         <tr>
@@ -29,11 +30,12 @@
         <% end %>
       </tbody>
     </table>
-
     <div class="pagination">
       <%= paginate @urban_trees %>
     </div>
    <br clear="all">
+</div>
+    
   </div>
 
  
