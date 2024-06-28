@@ -5,6 +5,12 @@
 <p><strong>Zone Name:</strong> <%= @school_zone_signage.school_zone.zone_name %></p>
 <p><strong>Sign Type:</strong> <%= @school_zone_signage.sign_type %></p>
 
+<% if @school_zone.image.attached? %>
+      <div class="mt-4">
+        <%= image_tag @school_zone.image %>
+      </div>
+    <% end %>
+
 <%= link_to 'Back', request.referer, class: 'btn btn-primary' %>
 </div>
 </div>

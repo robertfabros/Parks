@@ -5,4 +5,7 @@ class SchoolZonesController < ApplicationController
   def show
     @school_zone_signage = SchoolZoneSignage.find(params[:id])
   end
+  def school_zone_params
+    params.require(:school_zone_signage).permit(:school_name, :zone_name, :sign_type, :image)
+  end
 end
