@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_27_202718) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_30_150402) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -209,4 +209,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_27_202718) do
   add_foreign_key "tree_inventories", "tree_healths"
   add_foreign_key "tree_inventories", "tree_locations"
   add_foreign_key "tree_inventories", "tree_species"
+  add_foreign_key "urban_trees", "common_names"
+  add_foreign_key "urban_trees", "electoral_wards"
 end

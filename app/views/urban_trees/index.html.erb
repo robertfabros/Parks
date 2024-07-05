@@ -1,9 +1,6 @@
-
-  
-
-  <div class="container">
-    <h1 class="text-center text-2xl py-2 mb-4">Urban Trees</h1>
-    <div class="rb-table-container">
+<div class="container">
+  <h1 class="text-center text-2xl py-2 mb-4">Urban Trees</h1>
+  <div class="rb-table-container">
     <table>
       <thead>
         <tr>
@@ -16,8 +13,8 @@
         <% @urban_trees.each do |tree| %>
           <tr>
             <td><%= tree.id %></td>
-            <td><%= link_to tree.common_name, urban_tree_path(tree) %></td>
-            <td><%= tree.electoral_ward %></td>
+            <td><%= link_to tree.common_name&.name, urban_tree_path(tree) %></td>
+            <td><%= tree.electoral_ward&.name %></td>
           </tr>
         <% end %>
       </tbody>
@@ -25,8 +22,5 @@
     <div class="pagination">
       <%= paginate @urban_trees %>
     </div>
-
-</div>
-    
   </div>
-
+</div>
